@@ -1,0 +1,174 @@
+@media (max-width: 1200px) {
+    #header .nav li {
+        width: 120px;
+    }
+
+    #gnb ul {
+        width: 120px;
+    }
+}
+
+@media (max-width:960px) {
+    #header .nav {
+        display: none;
+    }
+
+    #header .util .mobile {
+        display: inline-block;
+    }
+}
+
+@media (max-width:800px) {
+    #section-01 .wrap {
+        gap: 30px;
+    }
+}
+
+@media (max-width:700px) {
+    #header {
+        padding: 0 20px;
+    }
+
+    #main-visual {
+        height: 500px;
+    }
+
+    #main-visual .text {
+        bottom: 25px;
+        left: 25px;
+    }
+
+    #main-visual .text h4 {
+        font-size: 20px;
+    }
+
+    #main-visual .text h3 {
+        font-size: 25px;
+    }
+
+    #main-visual .text p {
+        font-size: 15px;
+        padding: 15px 20px;
+    }
+
+    #section-01 .wrap .item p:nth-child(2) {
+        display: none;
+    }
+
+    #section-01 .item h3 {
+        font-size: 20px;
+    }
+
+    #section-01 .item p:nth-child(2) {
+        font-size: 13px;
+    }
+
+    #section-01 .item p:nth-child(3) {
+        font-size: 14px;
+    }
+
+    #footer {
+        flex-wrap:  wrap-reverse;
+    }
+
+    #footer .right {
+        margin-bottom: 40px;
+    }
+
+    #footer .right p {
+        text-align: left;
+    }
+}
+
+@media (max-width:540px) {
+    #header {
+        width: 100vw;
+    }
+
+    #header .util li:not(:last-child) {
+        display: none;
+    }
+
+    #section-02,
+    #section-03,
+    #section-04 {
+        padding: 0px;
+        overflow: hidden;
+    }
+
+    /* 섹션2 */
+
+    #section-02 .title h3 {
+        font-size: 25px;
+    }
+
+    #section-02 .title {
+        margin: 0 20px;
+    }
+
+    #section-02 .sub-text,
+    #section-02 .price {
+        margin-left: 20px;
+    }
+
+    /* 섹션3 */
+
+    #section-03 .title h3 {
+        font-size: 25px;
+    }
+
+    #section-03 .title {
+        margin: 0 20px;
+    }
+
+    #section-03 .sub-text,
+    #section-03 .price {
+        margin-left: 20px;
+    }    
+
+    /* 섹션4 */
+
+    #section-04 .title h3 {
+        font-size: 25px;
+    }
+
+    #section-04 .title {
+        margin: 0 20px;
+    }
+
+    #section-04 .swiper-slide .base,
+    #section-04 .sub-text,
+    #section-04 .price {
+        margin-left: 20px;
+    }
+
+    #footer {
+        padding: 20px;
+    }
+    
+}
+
+@media (max-width:450px) {
+    #main-visual .text h4 {
+        font-size: 15px;
+    }
+
+    #main-visual .text h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    #main-visual .text p {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    #footer .right {
+        margin-bottom: 20px;
+    }
+
+    #footer .service {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

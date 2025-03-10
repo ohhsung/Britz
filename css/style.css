@@ -1,0 +1,845 @@
+@import url(../font/Britz/stylesheet.css);
+@import url(../font/Copy/stylesheet.css);
+
+/* --------------------- RESET CSS -------------------- */
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Pretendard';
+
+    line-height: 1;
+
+    color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    white-space: nowrap;
+}
+
+img, video {
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    all: unset;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    all: unset;
+}
+
+input::-ms-clear,
+input::-ms-reveal{
+	display:none;width:0;height:0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+	display:none;
+}
+
+/* ----------------- 애니메이션 영역 -------------- */
+
+#header {
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+}
+
+#header .nav li {
+    transition: color 300ms ease-out;
+}
+
+#header h1 a {
+    transition: color 300ms ease-out;
+}
+
+#header .util svg {
+    transition: fill 300ms ease-out;
+}
+
+#gnb {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+}
+
+#gnb.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#search {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+}
+
+#search.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* #header가 active 상태일 때 */
+#header.active {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* .nav li가 active 상태일 때 */
+#header.active .nav li {
+    color: #000 !important;
+}
+
+/* h1 a가 active 상태일 때 */
+#header.active h1 a {
+    color: #000 !important;
+}
+
+/* .util svg가 active 상태일 때 */
+#header.active .util svg {
+    fill: #000 !important;
+}
+
+.swiper-slide {
+    overflow: hidden;
+}
+
+/* ---------------------  FIXED HEADER CSS -------------------- */
+
+/*----------------- NAV -------------------*/
+
+#header {
+    width: 100%;
+    height: 90px;
+
+    padding: 0 60px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    white-space: nowrap;
+    
+    z-index: 9999;
+}
+
+#header h1 a {
+    display: block;
+    font-family: 'Britz';
+    margin-top: 10px;
+    color: #fff;
+
+}
+
+#header .nav {
+    display: flex;
+    position: absolute;
+    left: 47%;
+    transform: translateX(-50%);
+}
+
+#header .nav li {
+    width: 170px;
+    line-height: 90px;
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #fff;
+}
+
+#header .util {
+    display: flex;
+    gap: 20px;
+}
+
+#header .util li {
+    width: 28px;
+}
+
+#header .util img {
+    width: 100%;
+}
+
+#header.active {
+    background-color: #fff !important;
+}
+#header.active .nav li {
+    color: #000 !important;
+}
+
+#header .util .mobile{
+    display: none;
+}
+
+/*----------------- GNB 드롭다운 -------------------*/
+
+#gnb {
+    border-top: 1px solid rgba(0, 0, 0,0.2);
+
+    position: fixed;
+
+    width: 100%;
+    height: 350px;
+    background: #fff;
+
+    top: 90px;
+
+    z-index: 5;
+}
+
+#gnb .wrap {
+    display: flex;
+    padding-top: 32px;
+
+    position: absolute;
+    top: 0;
+    left: 47%;
+    transform: translateX(-50%);
+
+}
+
+#gnb ul {
+    width: 170px;
+}
+
+#gnb ul li {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 25px;
+
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#gnb ul li:hover {
+    cursor: pointer;
+}
+
+/*------------------ SEARCH 드롭다운 --------------------*/
+
+#search {
+    border-top: 1px solid rgba(0, 0, 0,0.2);
+
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: #fff;
+
+    position: fixed;
+    top: 90px;
+
+    z-index: 10;
+}
+
+#search .wrap {
+    width: 600px;
+    height: 350px;
+
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#search .item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 2px solid #333;
+    padding-bottom: 7px;
+    margin-bottom: 35px;
+}
+
+#search .input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#search .input input,
+#search .input input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+#search .item img {
+    width: 28px;
+}
+
+/* 인기 검색어 */
+
+#search .popular-search {
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#search .popular-search li {
+    color: #333;
+    margin-bottom: 12px;
+}
+
+#search .popular-search li:last-child {
+    margin-bottom: 0;
+}
+
+#search .popular-search li span {
+    color: #777;
+    margin-right: 12px;
+}
+
+#search .popular-search li strong {
+    display: block;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* ---------------------  FIXED HEADER CSS END -------------------- */
+
+/* ---------------------  MAIN VISUAL -------------------- */
+
+#main-visual {
+    position: relative;
+
+    width: 100%;
+    height: 800px;
+
+    overflow: hidden;
+}
+
+#main-visual .item {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    opacity: 0;
+
+    transition: opacity 2s ease-out; /* 전체 아이템의 opacity 애니메이션 */
+}
+
+#main-visual .item:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+#main-visual .item:nth-child(2) {
+    animation-delay: 2000ms;
+}
+
+#main-visual .item:nth-child(3) {
+    animation-delay: 4000ms;
+}
+
+#main-visual .item:nth-child(4) {
+    animation-delay: 6000ms;
+}
+
+#main-visual .item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+#main-visual .text {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+}
+
+#main-visual .text h4 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+#main-visual .text h3 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 35px;
+
+    margin-bottom: 23px;
+}
+
+#main-visual .text p {
+    display: inline-block;
+
+    color: #333;
+    font-size: 20px;
+
+    padding: 18px 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 100px;
+
+    transition: opacity 0.2s ease;
+
+    position: relative;
+    z-index: 1;
+}
+
+#main-visual .text p:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+/* ---------------------  MAIN -------------------- */
+
+/* ------ 섹션 01 ------ */
+
+#section-01 {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#section-01 .wrap {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+}
+
+#section-01 .vertical-line {
+    width: 1px;
+    height: 63px;
+    background: #d7d7d7;
+}
+
+#section-01 .item {
+    text-align: center;
+    white-space: nowrap;
+}
+
+#section-01 .item h3:nth-child(1),
+#section-01 .item p:nth-child(2) {
+    margin-bottom: 12px;
+}
+
+#section-01 .item h3 {
+    font-weight: 600;
+    font-size: 24px;
+    color: #000;
+}
+
+#section-01 .item p:nth-child(2) {
+    font-size: 17px;
+    color: #666;
+}
+
+#section-01 .item p:nth-child(3){
+    font-size: 16px;
+    color: #666;
+}
+
+#section-01 .item:hover p:nth-child(3) {
+    color: #000;
+}
+
+#section-01 .item:hover {
+    cursor: pointer;
+}
+
+/* ------ 섹션 02 ------ */
+
+#section-02 {
+    padding: 0 60px;
+    margin-bottom: 140px;
+}
+
+#section-02 .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 27px;
+}
+
+#section-02 .title h3 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+
+#section-02 .title span {
+    margin-left: 6px;
+    font-weight: 500;
+    color: #6F6F6F;
+}
+
+#section-02 .title p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+}
+
+#section-02 .title p:hover {
+    cursor: pointer;
+    color: #000;
+}
+
+#section-02 .swiper-slide:hover {
+    cursor: pointer;
+}
+
+#section-02 .swiper-slide img {
+    width: 432px;
+    height: 432px;
+    object-fit: cover;
+
+    transition: 0.2s;
+}
+
+#section-02 .swiper-slide img:hover {
+    transform: rotate(4.5deg);
+}
+
+#section-02 .sub-text {
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+
+    margin-bottom: 3px;
+}
+
+#section-02 .sub-text p:last-child::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1px;
+    height: 8px;
+    background-color: #7F7F7F;
+} 
+
+#section-02 .sub-text p:last-child {
+    font-size: 10px;
+    color: #555;
+
+    position: relative;
+    display: inline-block;
+    padding-left: 6px;
+    margin-left: 6px;
+}
+
+#section-02 .price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    
+    transition: 0.2s;
+}
+
+#section-02 .swiper-slide:hover .price {
+    color: #C53F3F;
+}
+
+/* ------ 섹션 03 ------ */
+
+#section-03 {
+    padding: 0 60px;
+    margin-bottom: 140px;
+}
+
+#section-03 .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 27px;
+}
+
+#section-03 .title h3 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+
+#section-03 .title span {
+    margin-left: 6px;
+    font-weight: 500;
+    color: #6F6F6F;
+}
+
+#section-03 .title p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+}
+
+#section-03 .title p:hover {
+    cursor: pointer;
+    color: #000;
+}
+
+#section-03 .swiper-slide:hover {
+    cursor: pointer;
+}
+
+#section-03 .swiper-slide img {
+    width: 432px;
+    height: 432px;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+#section-03 .swiper-slide img:hover {
+    transform: rotate(4.5deg);
+}
+
+#section-03 .sub-text {
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+
+    margin-bottom: 3px;
+}
+
+#section-03 .sub-text p:last-child::before {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1px;
+    height: 8px;
+    background-color: #7F7F7F;
+} 
+
+#section-03 .sub-text p:last-child {
+    font-size: 10px;
+    color: #555;
+
+    position: relative;
+    display: inline-block;
+    padding-left: 6px;
+    margin-left: 6px;
+}
+
+#section-03 .price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    
+    transition: 0.2s;
+}
+
+#section-03 .swiper-slide:hover .price {
+    color: #C53F3F;
+}
+
+/* ------ 섹션 04 ------ */
+
+#section-04 {
+    padding: 0 60px;
+    margin-bottom: 140px;
+}
+
+#section-04 .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 27px;
+}
+
+#section-04 .title h3 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+
+#section-04 .title span {
+    margin-left: 6px;
+    font-weight: 500;
+    color: #6F6F6F;
+}
+
+#section-04 .title p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+}
+
+#section-04 .title p:hover {
+    cursor: pointer;
+    color: #000;
+}
+
+#section-04 .swiper-slide:hover {
+    cursor: pointer;
+}
+
+#section-04 .swiper-slide img {
+    width: 432px;
+    height: 432px;
+    object-fit: cover;
+
+    transition: 0.2s;
+}
+
+#section-04 .swiper-slide img:hover {
+    transform: rotate(4.5deg);
+}
+
+#section-04 .sub-text {
+    display: flex;
+    align-items: center;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+
+    margin-bottom: 3px;
+}
+
+#section-04 .sub-text p:last-child::before {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1px;
+    height: 8px;
+    background-color: #7F7F7F;
+} 
+
+#section-04 .sub-text p:last-child {
+    font-size: 10px;
+    color: #555;
+
+    position: relative;
+    display: inline-block;
+    padding-left: 6px;
+    margin-left: 6px;
+}
+
+#section-04 .price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    
+    transition: 0.2s;
+}
+
+#section-04 .swiper-slide:hover .price {
+    color: #C53F3F;
+}
+
+#section-04 .swiper-slide .base {
+    font-size: 16px;
+    color: #aaa;
+    font-weight: 400;
+    margin: 5px 0 3px;
+    text-decoration: line-through;
+}
+
+#section-04 h3 span {
+    margin-right: 6px;
+    color: #C53F3F;
+}
+
+/* ------------------ FOOTER ------------------ */
+
+#footer {
+    width: 100%;
+    padding: 25px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .left {
+    width: 420px;
+}
+
+#footer .service {
+    display: flex;
+    gap: 23px;
+    white-space: nowrap;
+}
+
+#footer .service li {
+    font-size: 12px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+#footer .left p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #777;
+    line-height: 1.5;
+}
+
+#footer .right p {
+    font-family: 'Copy';
+    font-size: 13px;
+    color: #333;
+
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+#footer .sns {
+    display: flex;
+    gap: 10px;
+}
+
+#footer .sns a {
+    width: 25px;
+}
+
+#footer .sns img {
+    width: 100%;
+}
