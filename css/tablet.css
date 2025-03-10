@@ -96,10 +96,21 @@
         overflow: hidden;
     }
 
+    #section-02 .swiper-slide img,
+    #section-03 .swiper-slide img,
+    #section-04 .swiper-slide img {
+        width: 340px;
+        height: 340px;
+    }
+
     /* 섹션2 */
 
     #section-02 .title h3 {
-        font-size: 25px;
+        font-size: 18px;
+    }
+
+    #section-02 .title p {
+        font-size: 14px;
     }
 
     #section-02 .title {
@@ -114,7 +125,11 @@
     /* 섹션3 */
 
     #section-03 .title h3 {
-        font-size: 25px;
+        font-size: 18px;
+    }
+
+    #section-03 .title p {
+        font-size: 14px;
     }
 
     #section-03 .title {
@@ -129,7 +144,11 @@
     /* 섹션4 */
 
     #section-04 .title h3 {
-        font-size: 25px;
+        font-size: 18px;
+    }
+
+    #section-04 .title p {
+        font-size: 14px;
     }
 
     #section-04 .title {
