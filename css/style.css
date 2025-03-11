@@ -343,6 +343,8 @@ input::-webkit-search-results-decoration{
     height: 800px;
 
     overflow: hidden;
+
+    transition: 0.5s
 }
 
 #main-visual .item {
