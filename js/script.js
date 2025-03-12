@@ -1,7 +1,6 @@
 
-// 헤더
-
 document.addEventListener('DOMContentLoaded', function () {
+    // 헤더
     const navItems = document.querySelectorAll('.nav li'); // nav 항목들
     const gnb = document.getElementById('gnb'); // gnb 드롭다운
     const header = document.getElementById('header'); // header 요소
@@ -9,6 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchArea = document.getElementById('search'); // #search 영역
     const closeButton = document.querySelector('#search .item a'); // 닫기 버튼
     const utilSvgs = document.querySelectorAll('.util svg'); // util 안의 모든 svg 아이콘
+    const overlay = document.getElementById('overlay')
+    
+    // 모바일 탭메뉴
+    const mBtn = document.querySelector('.m-tab-btn');
+    const mMenu = document.querySelector('#mobile-tab-menu');
+    const mX = document.querySelector('.m-x');
+    const body = document.body;
+
+    // 메인 비주얼 슬라이드
+    const items = document.querySelectorAll('#main-visual .item');
+    let currentIndex = 0;
+
+    // ----------------------------------------------------------------------------- //
 
     // 드롭다운 열기 시 스크롤 방지
     function preventScroll() {
@@ -105,34 +117,42 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('mouseenter', function () {
             gnb.classList.add('show');  // 드롭다운 표시
             preventScroll(); // 드롭다운 열리면 스크롤 방지
+
+            overlay.classList.add('active');
         });
     });
 
     gnb.addEventListener('mouseenter', function () {
         gnb.classList.add('show');  // gnb 계속 보이도록
         preventScroll(); // 드롭다운 열리면 스크롤 방지
+
+        overlay.classList.add('active');
     });
 
     navItems.forEach(function (item) {
         item.addEventListener('mouseleave', function () {
             gnb.classList.remove('show');  // 드롭다운 숨기기
             allowScroll(); // 드롭다운 닫히면 스크롤 허용
+
+            overlay.classList.remove('active');
         });
     });
 
     gnb.addEventListener('mouseleave', function () {
         gnb.classList.remove('show');  // gnb 숨기기
         allowScroll(); // 드롭다운 닫히면 스크롤 허용
+
+        overlay.classList.remove('active');
     });
 
-    // 두 번째 기능: 검색 버튼 (검색 영역 열기/닫기)
     // 검색 버튼 클릭 시 드롭다운 열기
     searchButton.addEventListener('click', function (event) {
         event.preventDefault();  // 링크 클릭 시 페이지 이동 방지
-        searchArea.classList.add('show');  // #search 영역 보이기
+        searchArea.classList.toggle('show');  // #search 영역 보이기
         preventScroll(); // 검색 영역 열리면 스크롤 방지
 
-        header.classList.add('active')
+        header.classList.add('active');
+        overlay.classList.add('active');
     });
 
     // 닫기 버튼 클릭 시 드롭다운 닫기
@@ -140,7 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();  // 링크 클릭 시 페이지 이동 방지
         searchArea.classList.remove('show');  // #search 영역 숨기기
         allowScroll(); // 검색 영역 닫히면 스크롤 허용
-        header.classList.remove('active')
+        header.classList.remove('active');
+        overlay.classList.remove('active');
     });
 
     // #search 영역 밖을 클릭하면 드롭다운 닫기
@@ -230,14 +251,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-});
 
+    // ----------------------------------------------------------------------------- //
 
-// 메인 비주얼 애니메이션
-
-document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll('#main-visual .item');
-    let currentIndex = 0;
+    // 비주얼 슬라이드
 
     function showNextItem() {
         // 모든 아이템 숨기기
@@ -253,9 +270,29 @@ document.addEventListener("DOMContentLoaded", function () {
         currentIndex = (currentIndex + 1) % items.length;
     }
 
-    // 첫 번째 아이템을 바로 보여줌
-    showNextItem();
+    showNextItem(); // 첫 번째 아이템을 바로 보여줌
+    
+    setInterval(showNextItem, 4000); // 일정 시간 간격으로 슬라이드 전환
 
-    // 일정 시간 간격으로 슬라이드 전환
-    setInterval(showNextItem, 4000); // 4000ms마다 다음 아이템으로 전환 (2000ms 지연 후 사라짐)
+    // ----------------------------------------------------------------------------- //
+
+    // 모바일 탭
+
+    mBtn.addEventListener('click', () => {
+        mMenu.classList.toggle('active');
+        body.classList.toggle('no-scroll'); // 스크롤을 비활성화
+        overlay.classList.add('active');
+    });
+    
+    mX.addEventListener('click', () => {
+        mMenu.classList.remove('active');
+        body.classList.remove('no-scroll'); // 스크롤을 다시 활성화
+        overlay.classList.remove('active');
+    });
+
+    overlay.addEventListener('click', () => {
+        mMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('no-scroll');
+    });
 });
