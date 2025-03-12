@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeButton = document.querySelector('#search .item a'); // 닫기 버튼
     const utilSvgs = document.querySelectorAll('.util svg'); // util 안의 모든 svg 아이콘
     const overlay = document.getElementById('overlay')
+    const remove = document.querySelector('.remove')
     
     // 모바일 탭메뉴
     const mBtn = document.querySelector('.m-tab-btn');
@@ -69,6 +70,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 svg.style.fill = '#fff'; // .util svg 색상 원상복구
             });
         }
+    });
+
+    //스크롤 시 오버레이 삭제
+    window.addEventListener('scroll', () => {
+        overlay.classList.remove('active')
     });
 
     // #header에 마우스를 올리면 스타일을 변경 (기존 코드)
@@ -148,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 검색 버튼 클릭 시 드롭다운 열기
     searchButton.addEventListener('click', function (event) {
         event.preventDefault();  // 링크 클릭 시 페이지 이동 방지
-        searchArea.classList.toggle('show');  // #search 영역 보이기
+        searchArea.classList.add('show');  // #search 영역 보이기
         preventScroll(); // 검색 영역 열리면 스크롤 방지
 
         header.classList.add('active');
@@ -170,6 +176,14 @@ document.addEventListener('DOMContentLoaded', function () {
             searchArea.classList.remove('show');  // #search 영역 숨기기
             allowScroll(); // 검색 영역 닫히면 스크롤 허용
         }
+    });
+
+    // 아이콘 클릭시 search 영역 닫기
+    remove.addEventListener('click', () => {
+        searchArea.classList.remove('show');  // #search 영역 숨기기
+        allowScroll(); // 검색 영역 닫히면 스크롤 허용
+        header.classList.remove('active');
+        overlay.classList.remove('active');
     });
 
     // GNB 드롭다운이나 검색 영역이 열려있으면 #header의 스타일을 유지하도록 설정
