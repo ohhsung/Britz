@@ -1,14 +1,24 @@
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     #header .nav li {
-        width: 120px;
+        width: 140px;
     }
 
     #gnb ul {
-        width: 120px;
+        width: 140px;
     }
 }
 
-@media (max-width:960px) {
+@media (max-width: 1200px) {
+    #header .nav li {
+        width: 110px;
+    }
+
+    #gnb ul {
+        width: 110px;
+    }
+}
+
+@media (max-width:1000px) {
     #header .nav {
         display: none;
     }
@@ -18,7 +28,8 @@
     }
 
     #header .util li:nth-child(2),
-    #header .util li:nth-child(3) {
+    #header .util li:nth-child(3),
+    #header .util li:nth-child(4) {
         display: none;
     }
 }
@@ -30,10 +41,6 @@
 }
 
 @media (max-width:700px) {
-    #header {
-        padding: 0 20px;
-    }
-
     #search .wrap {
         width:fit-content;
         transition: 0.2s ease-out;
@@ -45,11 +52,6 @@
 
     #main-visual {
         height: 500px;
-    }
-
-    #main-visual .text {
-        bottom: 25px;
-        left: 25px;
     }
 
     #main-visual .text h4 {
@@ -96,6 +98,20 @@
 
 @media (max-width:540px) {
     #header {
+        padding: 0 40px;
+    }
+
+    #main-visual .text {
+        bottom: 40px;
+        left: 40px;
+    }
+
+    .swiper-wrapper {
+        padding-left: 20px;
+    }
+
+    
+    #header {
         width: 100vw;
     }
 
@@ -140,7 +156,7 @@
     }
 
     #section-02 .title {
-        margin: 0 20px;
+        margin: 0 40px;
     }
 
     #section-02 .sub-text,
@@ -159,7 +175,7 @@
     }
 
     #section-03 .title {
-        margin: 0 20px;
+        margin: 0 40px;
     }
 
     #section-03 .sub-text,
@@ -178,7 +194,7 @@
     }
 
     #section-04 .title {
-        margin: 0 20px;
+        margin: 0 40px;
     }
 
     #section-04 .swiper-slide .base,
