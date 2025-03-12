@@ -13,8 +13,13 @@
         display: none;
     }
 
-    #header .util .mobile {
+    #header .util li:last-child {
         display: inline-block;
+    }
+
+    #header .util li:nth-child(2),
+    #header .util li:nth-child(3) {
+        display: none;
     }
 }
 
@@ -27,6 +32,15 @@
 @media (max-width:700px) {
     #header {
         padding: 0 20px;
+    }
+
+    #search .wrap {
+        width:fit-content;
+        transition: 0.2s ease-out;
+    }
+
+    #search input {
+        width: calc(302px);
     }
 
     #main-visual {
@@ -85,8 +99,20 @@
         width: 100vw;
     }
 
-    #header .util li:not(:last-child) {
-        display: none;
+    #section-01 {
+        padding: 80px 0;
+    }
+
+    #section-01 .vertical-line {
+        height: 20px;
+    }
+
+    #section-01 .wrap {
+        gap: 24px;
+    }
+
+    #section-01 .item h3 {
+        font-size: 18px;    
     }
 
     #section-02,
