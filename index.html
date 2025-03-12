@@ -9,7 +9,7 @@
     <!-- 컨텐츠 js css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tablet.css">
-    <script src="js/script.js" defer></script>
+    <script defer src="js/script.js"></script>
 
     <!-- 스와이퍼 슬라이드 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -67,6 +67,8 @@
 
 <body>
 
+    <div id="overlay"></div>
+
     <!---------------------- FIXED 헤더 ------------------------>
 
     <!----------------- NAV ------------------->
@@ -115,12 +117,12 @@
                 </a>
             </li>
             
-            <li class="mobile">
-                <a href="#">
+            <li>
+                <button class="mobile m-tab-btn" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#fff">
                         <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
                     </svg>
-                </a>
+                </button>
             </li>
         </ul>
     </header>
@@ -166,6 +168,31 @@
                 <li>악세서리 </li>
             </ul>
         </div><!-- wrap -->
+    </div>
+
+    
+    <div id="mobile-tab-menu">
+        <div class="m-x" href=""><img src="img/icon/x_blk.png" alt=""></div>
+        
+        <ul class="m-nav">
+            <li><a href="#">사운드<span>></span></a></li>
+            <li><a href="#">게이밍<span>></span></a></li>
+            <li><a href="#">디바이스<span>></span></a></li>
+            <li><a href="#">가전<span>></span></a></li>
+            <li><a href="#">기타<span>></span></a></li>
+        </ul>
+
+        <ul class="m-util">
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">로그인</a></li>
+        </ul>
+
+        <ul class="m-service">
+            <li><a href="#"><img src="img/icon/help.png" alt="">고객센터</a></li>
+            <li><a href="#"><img src="img/icon/cart.png" alt="">장바구니</a></li>
+            <li><a href="#"><img src="img/icon/person.png" alt="">마이페이지</a></li>
+            <li><a href="#"><img src="img/icon/location.png" alt="">매장찾기</a></li>
+        </ul>
     </div>
 
     <!------------- SEARCH 드롭다운 --------------->
