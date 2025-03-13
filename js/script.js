@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // 현재 아이템 표시
-        items[currentIndex].style.transition = "opacity 2s ease-out";
+        items[currentIndex].style.transition = "opacity 0.8s ease-in-out";
         items[currentIndex].style.opacity = 1;
 
         // 다음 아이템으로 넘어가기
