@@ -669,8 +669,8 @@ body.no-scroll {
     white-space: nowrap;
 }
 
-#section-01 .item h3:nth-child(1),
-#section-01 .item p:nth-child(2) {
+#section-01 .item h3,
+#section-01 .item p {
     margin-bottom: 12px;
 }
 
@@ -680,20 +680,25 @@ body.no-scroll {
     color: #000;
 }
 
-#section-01 .item p:nth-child(2) {
+#section-01 .item p {
     font-size: 17px;
     color: #666;
     transition: 0.2s ease-out;
 }
 
-#section-01 .item p:nth-child(3){
+#section-01 .item span {
     font-size: 16px;
     color: #666;
     transition: 0.2s ease-out;
 }
 
-#section-01 .item:hover p:nth-child(3) {
+#section-01 .item:hover p {
     color: #000;
+}
+
+#section-01 .item:hover span {
+    color: #000;
+    margin-left: 5px;
 }
 
 #section-01 .item:hover {
