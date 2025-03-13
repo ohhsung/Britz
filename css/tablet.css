@@ -16,6 +16,28 @@
     #gnb ul {
         width: 110px;
     }
+
+    #section-01 .wrap {
+        gap: 28px;
+    }
+
+    #section-01 .item h3 {
+        font-size: 21px;
+    }
+
+    #section-01 .item p:nth-child(2) {
+        font-size: 15px;
+    }
+
+    #section-01 .item p:nth-child(3) {
+        font-size: 14px;
+    }
+
+    #section-02,
+    #section-03,
+    #event {
+        margin-bottom: 180px;
+    }
 }
 
 @media (max-width:1000px) {
@@ -67,6 +89,12 @@
         padding: 15px 20px;
     }
 
+    #section-02,
+    #section-03,
+    #event {
+        margin-bottom: 140px;
+    }
+
     #section-01 .wrap .item p:nth-child(2) {
         display: none;
     }
@@ -81,6 +109,51 @@
 
     #section-01 .item p:nth-child(3) {
         font-size: 14px;
+    }
+
+    #event .item {
+        width: 400px;
+        height: 100px;
+    }
+
+    #event img {
+        width: 70px;
+        height: 100%;
+    }
+
+    #event .text p  {
+        display: none;
+    }
+
+    #event .text h4 {
+        font-size: 16px;
+    }
+
+    #event .center,
+    #coupon .center {
+        margin-top: 40px;
+    }
+
+    #event button,
+    #coupon button {
+        font-size: 14px;
+        padding: 15px 20px;
+    }
+
+    #coupon .wrap {
+        gap: 35px;
+    }
+
+    #coupon .item {
+        width: 300px;
+    }
+
+    #coupon .item p {
+        font-size: 14px;
+    }
+
+    #coupon .item span {
+        font-size: 12px;
     }
 
     #footer {
@@ -115,6 +188,14 @@
         width: 100vw;
     }
 
+    #section-02,
+    #section-03,
+    #section-04,
+    #event,
+    #coupon {
+        margin-bottom: 120px;
+    }
+
     #section-01 {
         padding: 80px 0;
     }
@@ -129,6 +210,18 @@
 
     #section-01 .item h3 {
         font-size: 18px;    
+    }
+
+    #event .item {
+        width: 100%;
+    }
+
+    #event .text h4 {
+        font-size: 14px;
+    }
+
+    #event .text span {
+        font-size: 11px;
     }
 
     #section-02,
@@ -148,7 +241,7 @@
     /* 섹션2 */
 
     #section-02 .title h3 {
-        font-size: 18px;
+        font-size: 23px;
     }
 
     #section-02 .title p {
@@ -164,10 +257,22 @@
         margin-left: 20px;
     }
 
+    /* 이벤트 */
+
+    #event .text {
+        width: 150px;
+        white-space: nowrap;  
+    }
+
+    #event .text h4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     /* 섹션3 */
 
     #section-03 .title h3 {
-        font-size: 18px;
+        font-size: 23px;
     }
 
     #section-03 .title p {
@@ -181,12 +286,18 @@
     #section-03 .sub-text,
     #section-03 .price {
         margin-left: 20px;
-    }    
+    }
+
+    /* 쿠폰 */
+
+    #coupon .item {
+        width: 250px;
+    }
 
     /* 섹션4 */
 
     #section-04 .title h3 {
-        font-size: 18px;
+        font-size: 23px;
     }
 
     #section-04 .title p {
