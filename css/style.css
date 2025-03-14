@@ -911,9 +911,6 @@ body.no-scroll {
 }
 
 #event .text h4 {
-    width: 90%;
-    overflow: hedden;
-
     font-weight: 600;
     font-size: 19px;
 }
