@@ -55,6 +55,10 @@
     #header .util li:nth-child(4) {
         display: none;
     }
+
+    #coupon .wrap {
+        gap: 60px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -67,10 +71,6 @@
     #search .wrap {
         width: fit-content;
         transition: 0.2s ease-out;
-    }
-
-    #search input {
-        width: calc(302px);
     }
 
     #main-visual {
@@ -140,10 +140,6 @@
     #coupon button {
         font-size: 14px;
         padding: 15px 20px;
-    }
-
-    #coupon .wrap {
-        gap: 35px;
     }
 
     #coupon .item {
@@ -280,6 +276,10 @@
     #section-04 h3 span {
         margin-right: 6px;
         color: #C53F3F;
+    }
+
+    #coupon .item {
+        width: 250px;
     }
 
     #footer {

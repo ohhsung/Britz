@@ -957,8 +957,11 @@ body.no-scroll {
 
 #coupon .item {
     width: 398px;
+    display: flex;
+    flex-wrap: wrap;
 
     transition: 0.2s ease-out;
+    white-space: wrap;
 }
 
 #coupon .item p {
