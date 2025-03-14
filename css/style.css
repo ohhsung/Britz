@@ -906,6 +906,7 @@ body.no-scroll {
 
 #event .text {
     display: flex;
+    overflow: hidden;
     flex-wrap: wrap;
     gap: 10px;
 }
