@@ -188,13 +188,22 @@
         margin-bottom: 120px;
     }
 
-    #section-02,
-    #section-03,
-    #section-04,
+    #section-02 .title,
+    #section-03 .title,
+    #section-04 .title {
+        padding: 0 30px;
+    }
+
+    .swiper {
+        padding: 0 30px !important;
+    }
+    
+
     #event,
     #coupon {
         padding: 0 30px;
     }
+
 
     #section-01 {
         padding: 80px 0;
