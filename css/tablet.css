@@ -68,9 +68,14 @@
 }
 
 @media (max-width: 700px) {
+    
     #search .wrap {
-        width: fit-content;
+        width: 80%;
         transition: 0.2s ease-out;
+    }
+
+    #search input {
+        width: 130px;
     }
 
     #main-visual {
@@ -198,7 +203,6 @@
         padding: 0 30px !important;
     }
     
-
     #event,
     #coupon {
         padding: 0 30px;
