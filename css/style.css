@@ -1,6 +1,7 @@
 @import url(../font/Britz/stylesheet.css);
 @import url(../font/Copy/stylesheet.css);
 @import url(../font/Pretendard/pretendard.css);
+@import url(../font/Kopub/stylesheet.css);
 
 /* --------------------- RESET CSS -------------------- */
 
@@ -705,105 +706,149 @@ body.no-scroll {
     cursor: pointer;
 }
 
-/* ------ 섹션 02 ------ */
+/* ------ 섹션 ------ */
 
-#section-02 {
+/* 공통 스타일 */
+#section-02,
+#section-03,
+#section-04 {
     padding: 0 60px;
     margin-bottom: 200px;
 }
 
-#section-02 .title {
+#section-02 .title,
+#section-03 .title,
+#section-04 .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin-bottom: 27px;
+    margin-bottom: 40px;
 }
 
-#section-02 .title h3 {
+#section-02 .title h3,
+#section-03 .title h3,
+#section-04 .title h3 {
     font-size: 26px;
     font-weight: 600;
     color: #000;
 }
 
-#section-02 .title span {
+#section-02 .title span,
+#section-03 .title span,
+#section-04 .title span {
     margin-left: 6px;
     font-weight: 500;
     color: #6F6F6F;
 }
 
-#section-02 .title p {
+#section-02 .title p,
+#section-03 .title p,
+#section-04 .title p {
     font-size: 16px;
     font-weight: 400;
     color: #666;
-
     transition: 0.2s ease-out;
 }
 
-#section-02 .title p:hover {
+#section-02 .title p:hover,
+#section-03 .title p:hover,
+#section-04 .title p:hover {
     cursor: pointer;
     color: #000;
 }
 
+/* 공통 슬라이드 스타일 */
+#section-02 .swiper-slide,
+#section-03 .swiper-slide,
+#section-04 .swiper-slide {
+    width: 400px;
+}
+
+#section-02 .swiper-slide:hover,
+#section-02 .swiper-slide:hover,
 #section-02 .swiper-slide:hover {
     cursor: pointer;
 }
 
-#section-02 .swiper-slide img {
-    width: 432px;
-    height: 432px;
+#section-02 .swiper-slide img,
+#section-03 .swiper-slide img,
+#section-04 .swiper-slide img {
+    width: 100%;
     object-fit: cover;
-
     transition: 0.2s;
 }
 
-#section-02 .swiper-slide img:hover {
+#section-02 .swiper-slide img:hover,
+#section-03 .swiper-slide img:hover,
+#section-04 .swiper-slide img:hover {
     transform: rotate(4.5deg);
 }
 
-#section-02 .sub-text {
+/* 공통 sub-text 스타일 */
+#section-02 .sub-text,
+#section-03 .sub-text,
+#section-04 .sub-text {
     display: flex;
     align-items: center;
-
     font-size: 16px;
     font-weight: 500;
     color: #444;
-
     margin-bottom: 3px;
 }
 
-#section-02 .sub-text p:last-child::before {
+#section-02 .sub-text p:last-child::before,
+#section-03 .sub-text p:last-child::before,
+#section-04 .sub-text p:last-child::before {
     content: '';
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-
     width: 1px;
     height: 8px;
     background-color: #7F7F7F;
-} 
+}
 
-#section-02 .sub-text p:last-child {
+#section-02 .sub-text p:last-child,
+#section-03 .sub-text p:last-child,
+#section-04 .sub-text p:last-child {
     font-size: 12px;
     font-weight: 400;
     color: #888;
-
     position: relative;
     display: inline-block;
     padding-left: 6px;
     margin-left: 6px;
 }
 
-#section-02 .price {
+/* 공통 가격 스타일 */
+#section-02 .price,
+#section-03 .price,
+#section-04 .price {
     font-size: 20px;
     font-weight: 500;
     color: #000;
-    
     transition: 0.2s;
 }
 
-#section-02 .swiper-slide:hover .price {
+#section-02 .swiper-slide:hover .price,
+#section-03 .swiper-slide:hover .price,
+#section-04 .swiper-slide:hover .price {
+    color: #C53F3F;
+}
+
+/* ------ 섹션 04 할인 ------ */
+
+#section-04 .swiper-slide .base {
+    font-size: 16px;
+    color: #777;
+    font-weight: 400;
+    margin: 5px 0 3px;
+    text-decoration: line-through;
+}
+
+#section-04 h3 span {
+    margin-right: 6px;
     color: #C53F3F;
 }
 
@@ -894,121 +939,6 @@ body.no-scroll {
     justify-content: center;
 }
 
-#event button {
-    padding: 20px 24px;
-    border: 1px solid #c7c7c7;
-    color: #333;
-    transition: 0.2s ease-out;
-    border-radius: 8px;
-}
-
-#event button:hover {
-    background: #f1f1f1;
-}
-
-
-/* ------ 섹션 03 ------ */
-
-#section-03 {
-    padding: 0 60px;
-    margin-bottom: 200px;
-}
-
-#section-03 .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 27px;
-}
-
-#section-03 .title h3 {
-    font-size: 26px;
-    font-weight: 600;
-    color: #000;
-}
-
-#section-03 .title span {
-    margin-left: 6px;
-    font-weight: 500;
-    color: #6F6F6F;
-}
-
-#section-03 .title p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #666;
-
-    transition: 0.2s ease-out;
-}
-
-#section-03 .title p:hover {
-    cursor: pointer;
-    color: #000;
-}
-
-#section-03 .swiper-slide:hover {
-    cursor: pointer;
-}
-
-#section-03 .swiper-slide img {
-    width: 432px;
-    height: 432px;
-    object-fit: cover;
-    transition: 0.2s;
-}
-
-#section-03 .swiper-slide img:hover {
-    transform: rotate(4.5deg);
-}
-
-#section-03 .sub-text {
-    display: flex;
-    align-items: center;
-
-    font-size: 16px;
-    font-weight: 500;
-    color: #444;
-
-    margin-bottom: 3px;
-}
-
-#section-03 .sub-text p:last-child::before {
-    content: '';
-
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 1px;
-    height: 8px;
-    background-color: #7F7F7F;
-} 
-
-#section-03 .sub-text p:last-child {
-    font-size: 12px;
-    font-weight: 400;
-    color: #888;
-
-    position: relative;
-    display: inline-block;
-    padding-left: 6px;
-    margin-left: 6px;
-}
-
-#section-03 .price {
-    font-size: 20px;
-    font-weight: 500;
-    color: #000;
-    
-    transition: 0.2s;
-}
-
-#section-03 .swiper-slide:hover .price {
-    color: #C53F3F;
-}
-
 /* ------ 쿠폰 페이지 ------ */
 
 #coupon {
@@ -1055,6 +985,9 @@ body.no-scroll {
     justify-content: center;
 }
 
+/* 이벤트, 쿠폰 공통 버튼 */
+
+#event button,
 #coupon button {
     padding: 20px 24px;
     border: 1px solid #c7c7c7;
@@ -1063,125 +996,11 @@ body.no-scroll {
     border-radius: 8px;
 }
 
+#event button:hover,
 #coupon button:hover {
     background: #f1f1f1;
 }
 
-/* ------ 섹션 04 ------ */
-
-#section-04 {
-    padding: 0 60px;
-    margin-bottom: 140px;
-}
-
-#section-04 .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 27px;
-}
-
-#section-04 .title h3 {
-    font-size: 26px;
-    font-weight: 600;
-    color: #000;
-}
-
-#section-04 .title span {
-    margin-left: 6px;
-    font-weight: 500;
-    color: #6F6F6F;
-}
-
-#section-04 .title p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #666;
-
-    transition: 0.2s ease-out;
-}
-
-#section-04 .title p:hover {
-    cursor: pointer;
-    color: #000;
-}
-
-#section-04 .swiper-slide:hover {
-    cursor: pointer;
-}
-
-#section-04 .swiper-slide img {
-    width: 432px;
-    height: 432px;
-    object-fit: cover;
-
-    transition: 0.2s;
-}
-
-#section-04 .swiper-slide img:hover {
-    transform: rotate(4.5deg);
-}
-
-#section-04 .sub-text {
-    display: flex;
-    align-items: center;
-
-    font-size: 16px;
-    font-weight: 500;
-    color: #444;
-
-    margin-bottom: 3px;
-}
-
-#section-04 .sub-text p:last-child::before {
-    content: '';
-
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 1px;
-    height: 8px;
-    background-color: #7F7F7F;
-} 
-
-#section-04 .sub-text p:last-child {
-    font-size: 12px;
-    font-weight: 400;
-    color: #888;
-
-    position: relative;
-    display: inline-block;
-    padding-left: 6px;
-    margin-left: 6px;
-}
-
-#section-04 .price {
-    font-size: 20px;
-    font-weight: 500;
-    color: #000;
-    
-    transition: 0.2s;
-}
-
-#section-04 .swiper-slide:hover .price {
-    color: #C53F3F;
-}
-
-#section-04 .swiper-slide .base {
-    font-size: 16px;
-    color: #777;
-    font-weight: 400;
-    margin: 5px 0 3px;
-    text-decoration: line-through;
-}
-
-#section-04 h3 span {
-    margin-right: 6px;
-    color: #C53F3F;
-}
 
 /* ------------------ FOOTER ------------------ */
 

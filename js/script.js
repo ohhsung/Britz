@@ -294,13 +294,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     mBtn.addEventListener('click', () => {
         mMenu.classList.toggle('active');
-        body.classList.toggle('no-scroll'); // 스크롤을 비활성화
+        body.classList.toggle('no-scroll');
         overlay.classList.add('active');
     });
     
     mX.addEventListener('click', () => {
         mMenu.classList.remove('active');
-        body.classList.remove('no-scroll'); // 스크롤을 다시 활성화
+        body.classList.remove('no-scroll');
         overlay.classList.remove('active');
     });
 

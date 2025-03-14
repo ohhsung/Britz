@@ -33,9 +33,10 @@
         font-size: 14px;
     }
 
-    #section-02,
-    #section-03,
-    #event {
+    #section-02, 
+    #section-03, 
+    #event,
+    #coupon {
         margin-bottom: 180px;
     }
 }
@@ -56,15 +57,15 @@
     }
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
     #section-01 .wrap {
         gap: 30px;
     }
 }
 
-@media (max-width:700px) {
+@media (max-width: 700px) {
     #search .wrap {
-        width:fit-content;
+        width: fit-content;
         transition: 0.2s ease-out;
     }
 
@@ -89,9 +90,10 @@
         padding: 15px 20px;
     }
 
-    #section-02,
-    #section-03,
-    #event {
+    #section-02, 
+    #section-03, 
+    #event, 
+    #coupon {
         margin-bottom: 140px;
     }
 
@@ -121,7 +123,7 @@
         height: 100%;
     }
 
-    #event .text p  {
+    #event .text p {
         display: none;
     }
 
@@ -157,7 +159,7 @@
     }
 
     #footer {
-        flex-wrap:  wrap-reverse;
+        flex-wrap: wrap-reverse;
     }
 
     #footer .right {
@@ -169,7 +171,7 @@
     }
 }
 
-@media (max-width:540px) {
+@media (max-width: 540px) {
     #header {
         padding: 0 40px;
     }
@@ -178,14 +180,16 @@
         bottom: 40px;
         left: 40px;
     }
-
-    .swiper-wrapper {
-        padding-left: 20px;
-    }
-
-    
     #header {
         width: 100vw;
+    }
+
+    #section-02, 
+    #section-03, 
+    #section-04, 
+    #event, 
+    #coupon {
+        margin-bottom: 120px;
     }
 
     #section-02,
@@ -193,7 +197,7 @@
     #section-04,
     #event,
     #coupon {
-        margin-bottom: 120px;
+        padding: 0 30px;
     }
 
     #section-01 {
@@ -224,103 +228,66 @@
         font-size: 11px;
     }
 
-    #section-02,
-    #section-03,
-    #section-04 {
-        padding: 0px;
-        overflow: hidden;
-    }
-
-    #section-02 .swiper-slide img,
-    #section-03 .swiper-slide img,
-    #section-04 .swiper-slide img {
-        width: 340px;
-        height: 340px;
-    }
-
-    /* 섹션2 */
-
-    #section-02 .title h3 {
-        font-size: 23px;
-    }
-
-    #section-02 .title p {
-        font-size: 14px;
-    }
-
-    #section-02 .title {
-        margin: 0 40px;
-    }
-
-    #section-02 .sub-text,
-    #section-02 .price {
-        margin-left: 20px;
-    }
-
-    /* 이벤트 */
-
-    #event .text {
-        width: 150px;
-        white-space: nowrap;  
-    }
-
-    #event .text h4 {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* 섹션3 */
-
-    #section-03 .title h3 {
-        font-size: 23px;
-    }
-
-    #section-03 .title p {
-        font-size: 14px;
-    }
-
-    #section-03 .title {
-        margin: 0 40px;
-    }
-
-    #section-03 .sub-text,
-    #section-03 .price {
-        margin-left: 20px;
-    }
-
-    /* 쿠폰 */
-
-    #coupon .item {
-        width: 250px;
-    }
-
-    /* 섹션4 */
-
+    #section-02 .title h3,
+    #section-03 .title h3,
     #section-04 .title h3 {
-        font-size: 23px;
+        font-size: 20px;
     }
 
+    #section-02 .title p,
+    #section-03 .title p,
     #section-04 .title p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
-    #section-04 .title {
-        margin: 0 40px;
+    /* 공통 sub-text 스타일 */
+    #section-02 .sub-text,
+    #section-03 .sub-text,
+    #section-04 .sub-text {
+        font-size: 13px;
+        font-weight: 300;
+        color: #444;
+        margin-bottom: 3px;
     }
 
-    #section-04 .swiper-slide .base,
-    #section-04 .sub-text,
+    #section-02 .sub-text p:last-child::before,
+    #section-03 .sub-text p:last-child::before,
+    #section-04 .sub-text p:last-child::before {
+        display: none;
+    }
+
+    #section-02 .sub-text p:last-child,
+    #section-03 .sub-text p:last-child,
+    #section-04 .sub-text p:last-child {
+        display: none;
+    }
+
+    /* 공통 가격 스타일 */
+    #section-02 .price,
+    #section-03 .price,
     #section-04 .price {
-        margin-left: 20px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    /* ------ 섹션 04 할인 ------ */
+
+    #section-04 .swiper-slide .base {
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+    #section-04 h3 span {
+        margin-right: 6px;
+        color: #C53F3F;
     }
 
     #footer {
         padding: 20px;
     }
-    
 }
 
-@media (max-width:450px) {
+@media (max-width: 450px) {
     #main-visual .text h4 {
         font-size: 15px;
     }
