@@ -773,6 +773,7 @@ body.no-scroll {
 #section-02 .swiper-slide img,
 #section-03 .swiper-slide img,
 #section-04 .swiper-slide img {
+    max-width: 432px;
     width: 100%;
     object-fit: cover;
     transition: 0.2s;
