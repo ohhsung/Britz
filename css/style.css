@@ -561,7 +561,7 @@ body.no-scroll {
 
     overflow: hidden;
 
-    transition: 0.5s
+    transition: 0.5s;
 }
 
 #main-visual .item {
@@ -599,6 +599,7 @@ body.no-scroll {
 }
 
 #main-visual .text {
+    width: 70%;
     position: absolute;
     bottom: 60px;
     left: 60px;
@@ -618,6 +619,7 @@ body.no-scroll {
     color: #fff;
     font-weight: 500;
     font-size: 35px;
+    white-space: wrap;
 
     margin-bottom: 23px;
 }
