@@ -912,13 +912,14 @@ body.no-scroll {
 
 #event .text h4 {
     width: 100%;
+    overflow: hedden;
 
     font-weight: 600;
     font-size: 19px;
 }
 
 #event .text p {
-    width: 100%;
+    width: 90%;
 
     font-weight: 400;
     font-size: 14px;
