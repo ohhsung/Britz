@@ -245,9 +245,7 @@ input::-webkit-search-results-decoration{
 
 /*----------------- GNB 드롭다운 -------------------*/
 
-#gnb {
-    border-top: 1px solid rgba(0, 0, 0,0.2);
-
+#gnb { 
     position: fixed;
 
     width: 100%;
