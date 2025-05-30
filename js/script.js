@@ -27,28 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         utilSvgs.forEach(svg => svg.style.fill = svgFill);
     }
 
-    function preventScroll() {
-        body.style.overflow = 'hidden';
-    }
     function allowScroll() {
         body.style.overflow = '';
     }
 
     function updateHeaderOnScroll() {
-        if (window.scrollY >= 200) {
-            setHeaderStyle({
-                bgColor: '#fff',
-                textColor: '#000',
-                svgFill: '#000',
-                borderBottom: '1px solid #ddd'
-            });
-        } else {
-            setHeaderStyle({
-                bgColor: 'transparent',
-                textColor: '#fff',
-                svgFill: '#fff',
-                borderBottom: 'none'
-            });
+        if (!gnb.classList.contains('show') && !searchArea.classList.contains('show')) {
+            if (window.scrollY >= 200) {
+                setHeaderStyle({
+                    bgColor: '#fff',
+                    textColor: '#000',
+                    svgFill: '#000',
+                    borderBottom: '1px solid #ddd'
+                });
+            } else {
+                setHeaderStyle({
+                    bgColor: 'transparent',
+                    textColor: '#fff',
+                    svgFill: '#fff',
+                    borderBottom: 'none'
+                });
+            }
         }
     }
 
@@ -60,22 +59,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     header.addEventListener('mouseenter', () => {
+        // 헤더 위에 마우스 올라가면 스타일 적용
         setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
+
+        // gnb나 search가 열려있지 않으면 overlay 제거
+        if (!gnb.classList.contains('show') && !searchArea.classList.contains('show')) {
+            overlay.classList.remove('active');
+        }
     });
 
     header.addEventListener('mouseleave', () => {
-        if (gnb.style.visibility !== 'visible' && searchArea.style.visibility !== 'visible') {
-            if (window.scrollY >= 200) {
-                setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
-            } else {
-                setHeaderStyle({ bgColor: 'transparent', textColor: '#fff', svgFill: '#fff', borderBottom: 'none' });
-            }
+        if (gnb.classList.contains('show') || searchArea.classList.contains('show')) {
+            setHeaderStyle({
+                bgColor: '#fff',
+                textColor: '#000',
+                svgFill: '#000',
+                borderBottom: '1px solid #ddd'
+            });
+        } else {
+            updateHeaderOnScroll();
         }
     });
 
     function openGnb() {
         gnb.classList.add('show');
-        preventScroll();
+        body.style.overflow = 'hidden';
         overlay.classList.add('active');
         setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
     }
@@ -84,13 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gnb.classList.remove('show');
         allowScroll();
         overlay.classList.remove('active');
-        if (gnb.style.visibility !== 'visible' && searchArea.style.visibility !== 'visible') {
-            if (window.scrollY >= 200) {
-                setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
-            } else {
-                setHeaderStyle({ bgColor: 'transparent', textColor: '#fff', svgFill: '#fff', borderBottom: 'none' });
-            }
-        }
+        updateHeaderOnScroll();
     }
 
     navItems.forEach(item => {
@@ -103,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openSearch() {
         searchArea.classList.add('show');
-        preventScroll();
+        body.style.overflow = 'hidden';
         header.classList.add('active');
         overlay.classList.add('active');
         setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
@@ -114,13 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allowScroll();
         header.classList.remove('active');
         overlay.classList.remove('active');
-        if (gnb.style.visibility !== 'visible' && searchArea.style.visibility !== 'visible') {
-            if (window.scrollY >= 200) {
-                setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
-            } else {
-                setHeaderStyle({ bgColor: 'transparent', textColor: '#fff', svgFill: '#fff', borderBottom: 'none' });
-            }
-        }
+        updateHeaderOnScroll();
     }
 
     searchButton.addEventListener('click', e => {
@@ -143,15 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchArea.addEventListener('mouseenter', () => {
         setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
+        overlay.classList.add('active');
     });
 
     searchArea.addEventListener('mouseleave', () => {
-        if (gnb.style.visibility !== 'visible' && searchArea.style.visibility !== 'visible') {
-            if (window.scrollY >= 200) {
-                setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
-            } else {
-                setHeaderStyle({ bgColor: 'transparent', textColor: '#fff', svgFill: '#fff', borderBottom: 'none' });
-            }
+        if (!gnb.classList.contains('show') && !searchArea.classList.contains('show')) {
+            updateHeaderOnScroll();
         }
     });
 
