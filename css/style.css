@@ -380,7 +380,7 @@ input::-webkit-search-results-decoration {
 
 /*------------------ util 드롭다운 --------------------*/
 
-#header .util li {
+#header .util>li {
     position: relative;
 }
 
@@ -390,6 +390,16 @@ input::-webkit-search-results-decoration {
     right: 50%;
     transform: translateX(50%);
 
+    padding-top: 5px;
+
+    opacity: 0;
+
+    transition: 0.2s ease-out;
+
+    visibility: hidden;
+}
+
+#header .util .tab-menu .box {
     width: 100px;
 
     border: 1px solid #ccc;
@@ -398,15 +408,9 @@ input::-webkit-search-results-decoration {
     color: #000;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
     padding: 20px 0;
-
-    opacity: 0;
-
-    transition: 0.2s ease-out;
-
-    visibility: hidden;
 }
 
 #header .util .tab-menu a {
