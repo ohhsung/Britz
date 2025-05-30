@@ -55,7 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         updateHeaderOnScroll();
-        overlay.classList.remove('active');
+        
+        if (!gnb.classList.contains('show') && !searchArea.classList.contains('show') && !mMenu.classList.contains('active')) {
+            overlay.classList.remove('active');
+        }
     });
 
     header.addEventListener('mouseenter', () => {
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openGnb() {
         gnb.classList.add('show');
-        body.style.overflow = 'hidden';
+        // body.style.overflow = 'hidden';
         overlay.classList.add('active');
         setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
     }
@@ -105,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openSearch() {
         searchArea.classList.add('show');
-        body.style.overflow = 'hidden';
+        // body.style.overflow = 'hidden';
         header.classList.add('active');
         overlay.classList.add('active');
         setHeaderStyle({ bgColor: '#fff', textColor: '#000', svgFill: '#000', borderBottom: '1px solid #ddd' });
