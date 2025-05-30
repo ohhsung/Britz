@@ -115,12 +115,12 @@ input::-webkit-search-results-decoration {
     transition: color 300ms ease-out;
 }
 
-#header.white-bg .logo a {
+#header .logo a {
+    transition: color 300ms ease-out;
     filter: invert(0);
 }
 
-#header .logo a {
-    transition: color 300ms ease-out;
+#header.white-bg .logo a {
     filter: invert(1);
 }
 
