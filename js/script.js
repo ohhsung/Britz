@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const h1 = document.querySelector('h1 a');
         if (h1) h1.style.color = textColor;
         utilSvgs.forEach(svg => svg.style.fill = svgFill);
+
+        if (bgColor === '#fff') {
+            header.classList.add('white-bg');
+        } else {
+            header.classList.remove('white-bg');
+        }
     }
 
     function allowScroll() {
@@ -55,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         updateHeaderOnScroll();
-        
+
         if (!gnb.classList.contains('show') && !searchArea.classList.contains('show') && !mMenu.classList.contains('active')) {
             overlay.classList.remove('active');
         }
@@ -175,4 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mX.addEventListener('click', closeMobileMenu);
     overlay.addEventListener('click', closeMobileMenu);
+
 });
+
+
