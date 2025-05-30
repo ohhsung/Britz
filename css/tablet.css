@@ -47,7 +47,7 @@
     }
 
     #header .util li:last-child {
-        display: inline-block;
+        display: flex;
     }
 
     #header .util li:nth-child(2),

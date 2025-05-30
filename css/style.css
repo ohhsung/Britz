@@ -117,11 +117,11 @@ input::-webkit-search-results-decoration {
 
 #header .logo a {
     transition: color 300ms ease-out;
-    filter: invert(0);
+    filter: invert(1);
 }
 
 #header.white-bg .logo a {
-    filter: invert(1);
+    filter: invert(0);
 }
 
 #header .util svg {
