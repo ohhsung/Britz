@@ -403,7 +403,6 @@ input::-webkit-search-results-decoration {
     width: 100px;
 
     border: 1px solid #ccc;
-    border-top: none;
     background: #fff;
     color: #000;
 
