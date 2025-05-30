@@ -117,11 +117,6 @@ input::-webkit-search-results-decoration {
 
 #header .logo a {
     transition: color 300ms ease-out;
-    filter: invert(0);
-}
-
-#header.white-bg .logo a {
-    filter: invert(1);
 }
 
 #header .util svg {
@@ -184,8 +179,13 @@ input::-webkit-search-results-decoration {
     width: 80px;
 }
 
+#header.white-bg .logo a img {
+    filter: invert(0);
+}
+
 #header .logo a img {
     width: 100%;
+    filter: invert(1);
 }
 
 #header .nav {
