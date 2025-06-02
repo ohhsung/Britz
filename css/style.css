@@ -186,6 +186,7 @@ input::-webkit-search-results-decoration {
 #header .logo a img {
     width: 100%;
     filter: invert(1);
+    object-fit: contain;
 }
 
 #header .nav {

@@ -65,6 +65,10 @@
     #section-01 .wrap {
         gap: 30px;
     }
+
+    #header .logo a {
+        width: 60px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -175,6 +179,10 @@
 @media (max-width: 540px) {
     #header {
         padding: 0 40px;
+    }
+
+    #header .logo a {
+        width: 50px;
     }
 
     #main-visual .text {
